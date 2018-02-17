@@ -8,7 +8,7 @@ namespace CameraEmulator.UI.Services
     {
         public FrameworkElement GetMainView()
         {
-            return new MainWindow();
+            return new MainView();
         }
 
         public FrameworkElement GetStatusBar()

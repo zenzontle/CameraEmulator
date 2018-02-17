@@ -35,6 +35,9 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
@@ -112,15 +115,60 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Extensions\TabServiceExtensions.cs" />
+    <Compile Include="Extensions\TabControlExtensions.cs" />
+    <Compile Include="Models\ScannerModel.cs" />
+    <Compile Include="Models\SerialConfigurationModel.cs" />
+    <Compile Include="Models\CamerasModel.cs" />
+    <Compile Include="Models\TabItem.cs" />
+    <Compile Include="Services\Configuration\ConfigurationService.cs" />
+    <Compile Include="Services\Configuration\IConfigurationService.cs" />
+    <Compile Include="Services\Interfaces\ITabService.cs" />
+    <Compile Include="Services\ITabItem.cs" />
+    <Compile Include="Services\TabItemEventArgs.cs" />
+    <Compile Include="Services\TabService.cs" />
+    <Compile Include="ViewModels\CodeSendersViewModel.cs" />
+    <Compile Include="ViewModels\DashboardViewModel.cs" />
+    <Compile Include="ViewModels\ICommandViewModel.cs" />
     <Compile Include="ViewModels\RibbonViewModel.cs" />
+    <Compile Include="ViewModels\SerialConfigurationViewModel.cs" />
     <Compile Include="ViewModels\StatusBarViewModel.cs" />
+    <Compile Include="ViewModels\TabItem.cs" />
+    <Compile Include="Views\ClosableTabItemView.xaml.cs">
+      <DependentUpon>ClosableTabItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CodeSenders.xaml.cs">
+      <DependentUpon>CodeSenders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardView.xaml.cs">
+      <DependentUpon>DashboardView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RibbonView.xaml.cs">
       <DependentUpon>RibbonView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SerialConfigurationView.xaml.cs">
+      <DependentUpon>SerialConfigurationView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\StatusBarView.xaml.cs">
       <DependentUpon>StatusBarView.xaml</DependentUpon>
     </Compile>
-    <Page Include="Views\MainWindow.xaml">
+    <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ClosableTabItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CodeSenders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -131,12 +179,16 @@
     <Compile Include="ApplicationInitializationService.cs" />
     <Compile Include="ModuleInitializer.cs" />
     <Compile Include="Services\RibbonService.cs" />
-    <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="Views\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Views\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\RibbonView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SerialConfigurationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -173,14 +225,22 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Services\Interfaces\" />
+    <Folder Include="Controls\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FodyWeavers.xml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CameraEmulator.Core\CameraEmulator.Core.csproj">
+      <Project>{0B1D20DC-EBE1-424C-B808-D2AA69C986B8}</Project>
+      <Name>CameraEmulator.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="favicon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.2.2.0\build\net452\Fody.targets" Condition="Exists('..\packages\Fody.2.2.0\build\net452\Fody.targets')" />

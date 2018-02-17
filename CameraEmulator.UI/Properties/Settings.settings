@@ -1,7 +1,15 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CameraEmulator.UI.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Case" Type="CameraEmulator.Core.Scanners.Scanner" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Sleeve" Type="CameraEmulator.Core.Scanners.Scanner" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Item" Type="CameraEmulator.Core.Scanners.Scanner" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
 </SettingsFile>

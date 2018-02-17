@@ -1,0 +1,29 @@
+﻿<catel:UserControl x:Class="CameraEmulator.UI.Views.MainView"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                   xmlns:catel="http://schemas.catelproject.com"
+                   xmlns:orc="http://www.wildgums.net.au/orc"
+                   xmlns:controls="clr-namespace:CameraEmulator.UI.Views"
+                   
+                   d:DesignHeight="800" d:DesignWidth="600" mc:Ignorable="d">
+    <Grid>
+        <orc:TabControl x:Name="TDIControl" Margin="-1" LoadTabItems="LazyLoading">
+            <TabControl.ItemTemplate>
+                <DataTemplate>
+                    <controls:ClosableTabItemView Title="{Binding ViewModel.Title}" CanClose="{Binding CanClose}"></controls:ClosableTabItemView>
+                </DataTemplate>
+            </TabControl.ItemTemplate>
+
+            <TabControl.ContentTemplate>
+                <DataTemplate>
+                    <ContentControl Content="{Binding ViewModel, Converter={catel:ViewModelToViewConverter}}"></ContentControl>
+                </DataTemplate>
+            </TabControl.ContentTemplate>
+        </orc:TabControl>
+    </Grid>
+</catel:UserControl>
+
+
+

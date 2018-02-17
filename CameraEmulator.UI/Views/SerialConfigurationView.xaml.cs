@@ -1,11 +1,11 @@
 ﻿namespace CameraEmulator.UI.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for SerialConfiguration.xaml
     /// </summary>
-    public partial class MainWindow
+    public partial class SerialConfigurationView
     {
-        public MainWindow()
+        public SerialConfigurationView()
         {
             InitializeComponent();
         }

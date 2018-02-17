@@ -1,5 +1,7 @@
 ﻿using CameraEmulator.UI;
 using CameraEmulator.UI.Services;
+using CameraEmulator.UI.Services.Configuration;
+using CameraEmulator.UI.Services.Interfaces;
 using Catel.IoC;
 using Orchestra.Services;
 
@@ -16,5 +18,8 @@ public static class ModuleInitializer
         var serviceLocator = ServiceLocator.Default;
         serviceLocator.RegisterType<IRibbonService, RibbonService>();
         serviceLocator.RegisterType<IApplicationInitializationService, ApplicationInitializationService>();
+        serviceLocator.RegisterType<ITabService, TabService>(RegistrationType.Singleton);
+        serviceLocator.RegisterType<IConfigurationService, ConfigurationService>();
+
     }
 }

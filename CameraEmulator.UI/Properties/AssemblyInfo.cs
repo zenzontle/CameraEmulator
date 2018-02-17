@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("CameraEmulator.UI")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Timble Inc")]
 [assembly: AssemblyProduct("CameraEmulator.UI")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -1,7 +1,14 @@
 ﻿<Application x:Class="CameraEmulator.UI.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:properties="clr-namespace:CameraEmulator.UI.Properties">
     <Application.Resources>
-        
+        <ResourceDictionary>
+            <properties:Settings x:Key="Settings"></properties:Settings>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Catel.MVVM;component/Themes/Generic.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="/Themes/Generic.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

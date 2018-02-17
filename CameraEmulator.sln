@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CameraEmulator.UI", "CameraEmulator.UI\CameraEmulator.UI.csproj", "{64DE098B-915F-4E7F-9669-59EA5C94ECF5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CameraEmulator.Core", "CameraEmulator.Core\CameraEmulator.Core.csproj", "{0B1D20DC-EBE1-424C-B808-D2AA69C986B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{64DE098B-915F-4E7F-9669-59EA5C94ECF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64DE098B-915F-4E7F-9669-59EA5C94ECF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64DE098B-915F-4E7F-9669-59EA5C94ECF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B1D20DC-EBE1-424C-B808-D2AA69C986B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B1D20DC-EBE1-424C-B808-D2AA69C986B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B1D20DC-EBE1-424C-B808-D2AA69C986B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B1D20DC-EBE1-424C-B808-D2AA69C986B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

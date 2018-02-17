@@ -1,0 +1,57 @@
+﻿<catel:UserControl x:Class="CameraEmulator.UI.Views.CodeSenders"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:catel="http://schemas.catelproject.com"
+             xmlns:orc="http://www.wildgums.net.au/orc"
+             xmlns:viewModels="clr-namespace:CameraEmulator.UI.ViewModels"
+             
+             d:DataContext="{d:DesignInstance viewModels:CodeSendersViewModel, IsDesignTimeCreatable=True}"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical">
+            <GroupBox Header="Cameras">
+                <orc:StackGrid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">Case:</Label>
+                    <TextBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Path=Model.CaseCode, Mode=TwoWay}"></TextBox>
+                    <Button Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10 5" Command="{Binding SendCaseCode}">Send</Button>
+
+                    <Label Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">Sleeve:</Label>
+                    <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Path=Model.SleeveCode, Mode=TwoWay}"></TextBox>
+                    <Button Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10 5" Command="{Binding SendSleeveCode}">Send</Button>
+
+                    <Label Grid.Row="2" Grid.Column="0" VerticalAlignment="Center">Item:</Label>
+                    <TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Path=Model.ItemCode, Mode=TwoWay}"></TextBox>
+                    <Button Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10 5" Command="{Binding SendItemCode}">Send</Button>
+                </orc:StackGrid>
+            </GroupBox>
+            <orc:StackGrid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                </Grid.RowDefinitions>
+            </orc:StackGrid>
+        </StackPanel>
+
+        <!--<Label Grid.Row="0" Grid.Column="0" Content="{Binding Title}" />-->
+    </Grid>
+</catel:UserControl>

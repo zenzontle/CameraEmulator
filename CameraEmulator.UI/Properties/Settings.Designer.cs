@@ -8,22 +8,51 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CameraEmulator.UI.Properties
-{
-
-
+namespace CameraEmulator.UI.Properties {
+    
+    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "10.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-        public static Settings Default
-        {
-            get
-            {
+        
+        public static Settings Default {
+            get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::CameraEmulator.Core.Scanners.Scanner Case {
+            get {
+                return ((global::CameraEmulator.Core.Scanners.Scanner)(this["Case"]));
+            }
+            set {
+                this["Case"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::CameraEmulator.Core.Scanners.Scanner Sleeve {
+            get {
+                return ((global::CameraEmulator.Core.Scanners.Scanner)(this["Sleeve"]));
+            }
+            set {
+                this["Sleeve"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::CameraEmulator.Core.Scanners.Scanner Item {
+            get {
+                return ((global::CameraEmulator.Core.Scanners.Scanner)(this["Item"]));
+            }
+            set {
+                this["Item"] = value;
             }
         }
     }

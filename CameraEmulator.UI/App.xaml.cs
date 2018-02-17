@@ -2,6 +2,9 @@
 using System.Globalization;
 using System.Threading;
 using System.Windows;
+using CameraEmulator.Core;
+using CameraEmulator.Core.Scanners;
+using CameraEmulator.UI.Properties;
 using Catel.ApiCop;
 using Catel.ApiCop.Listeners;
 using Catel.IoC;
@@ -20,9 +23,22 @@ namespace CameraEmulator.UI
 
         protected override async void OnStartup(StartupEventArgs e)
         {
+            base.OnStartup(e);
 #if DEBUG
             LogManager.AddDebugListener();
 #endif
+            if (Settings.Default.Case == null)
+            {
+                Settings.Default.Case = new Scanner {ScannerType = SerialType.Case};
+            }
+            if (Settings.Default.Sleeve == null)
+            {
+                Settings.Default.Sleeve = new Scanner { ScannerType = SerialType.Sleeve };
+            }
+            if (Settings.Default.Item == null)
+            {
+                Settings.Default.Item = new Scanner { ScannerType = SerialType.Item };
+            }
 
             Log.Info("Starting application");
             
