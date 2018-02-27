@@ -14,7 +14,8 @@ namespace CameraEmulator.UI.ViewModels
         public RibbonViewModel(ITabService tabService)
         {
             ConfigureCameras = new TaskCommand(OnConfigureCamerasTask);
-            SendCodes = new TaskCommand(OnSendCodesTask);
+            SendCodesManually = new TaskCommand(OnSendCodesManuallyTask);
+            SendCodesFromFile = new TaskCommand(OnSendCodesFromFileTask);
 
             _tabService = tabService;
             _tabService.SelectedTabChanged += _tabService_SelectedTabChanged;
@@ -31,10 +32,16 @@ namespace CameraEmulator.UI.ViewModels
                 tag: "SerialConfiguration");
         }
 
-        public TaskCommand SendCodes { get; }
-        private async Task OnSendCodesTask()
+        public TaskCommand SendCodesManually { get; }
+        private async Task OnSendCodesManuallyTask()
         {
-            await _tabService.AddAndActivateAsync<CodeSendersViewModel>(canClose: true, tag: "CodeSender");
+            await _tabService.AddAndActivateAsync<CodeSenderManuallyViewModel>(canClose: true, tag: "CodeSenderManually");
+        }
+
+        public TaskCommand SendCodesFromFile { get; }
+        private async Task OnSendCodesFromFileTask()
+        {
+            await _tabService.AddAndActivateAsync<CodeSenderFromFileViewModel>(canClose: true, tag: "CodeSenderFromFile");
         }
 
         private void _tabService_SelectedTabChanged(object sender, TabItemEventArgs e)

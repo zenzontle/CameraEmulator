@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 
 namespace CameraEmulator.UI.Extensions
 {
@@ -20,9 +19,14 @@ namespace CameraEmulator.UI.Extensions
             if (wasSelected)
             {
                 var newIndex = index;
-                var newItem = newIndex < tabControl.Items.Count ? tabControl.Items[newIndex] : tabControl.Items.Cast<object>().LastOrDefault(x => x is TabItem);
-
-                tabControl.SelectedItem = newItem;
+                if (newIndex < tabControl.Items.Count)
+                {
+                    tabControl.Items.MoveCurrentToPosition(newIndex);
+                }
+                else
+                {
+                    tabControl.Items.MoveCurrentToLast();
+                }
             }
 
             return true;

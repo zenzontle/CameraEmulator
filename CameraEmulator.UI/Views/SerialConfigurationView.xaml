@@ -12,8 +12,8 @@
                    d:DesignHeight="330" d:DesignWidth="300" Background="White">
     <Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
         </Grid.RowDefinitions>
         
         <TabControl Grid.Row="0">
@@ -131,6 +131,28 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
+            <TabItem Header="Misc">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Vertical">
+                        <orc:StackGrid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">Code Send Delay:</Label>
+                            <TextBox Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Source={StaticResource Settings}, Path=Default.CodeSendDelay, Mode=TwoWay}"></TextBox>
+                        </orc:StackGrid>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
         </TabControl>
         <orc:StackGrid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -143,8 +165,8 @@
             </Grid.RowDefinitions>
 
             <orc:EmptyColumn></orc:EmptyColumn>
-            <Button Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10 5" Command="{Binding SaveConfiguration}">Save</Button>
-            <Button Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10 5" Command="{Binding CancelConfiguration}">Cancel</Button>
+            <Button Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10, 5" Command="{Binding SaveConfiguration}">Save</Button>
+            <Button Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10, 5" Command="{Binding CancelConfiguration}">Cancel</Button>
         </orc:StackGrid>
     </Grid>
 </catel:UserControl>

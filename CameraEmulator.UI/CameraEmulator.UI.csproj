@@ -109,6 +109,30 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -117,6 +141,7 @@
     </ApplicationDefinition>
     <Compile Include="Extensions\TabServiceExtensions.cs" />
     <Compile Include="Extensions\TabControlExtensions.cs" />
+    <Compile Include="Models\LoadFilesModel.cs" />
     <Compile Include="Models\ScannerModel.cs" />
     <Compile Include="Models\SerialConfigurationModel.cs" />
     <Compile Include="Models\CamerasModel.cs" />
@@ -127,7 +152,8 @@
     <Compile Include="Services\ITabItem.cs" />
     <Compile Include="Services\TabItemEventArgs.cs" />
     <Compile Include="Services\TabService.cs" />
-    <Compile Include="ViewModels\CodeSendersViewModel.cs" />
+    <Compile Include="ViewModels\CodeSenderFromFileViewModel.cs" />
+    <Compile Include="ViewModels\CodeSenderManuallyViewModel.cs" />
     <Compile Include="ViewModels\DashboardViewModel.cs" />
     <Compile Include="ViewModels\ICommandViewModel.cs" />
     <Compile Include="ViewModels\RibbonViewModel.cs" />
@@ -137,8 +163,11 @@
     <Compile Include="Views\ClosableTabItemView.xaml.cs">
       <DependentUpon>ClosableTabItemView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\CodeSenders.xaml.cs">
-      <DependentUpon>CodeSenders.xaml</DependentUpon>
+    <Compile Include="Views\CodeSenderFromFile.xaml.cs">
+      <DependentUpon>CodeSenderFromFile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CodeSenderManually.xaml.cs">
+      <DependentUpon>CodeSenderManually.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DashboardView.xaml.cs">
       <DependentUpon>DashboardView.xaml</DependentUpon>
@@ -160,7 +189,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\CodeSenders.xaml">
+    <Page Include="Views\CodeSenderFromFile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CodeSenderManually.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

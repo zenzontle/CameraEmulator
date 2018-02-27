@@ -1,12 +1,11 @@
 ﻿using System;
-using CameraEmulator.Core.Scanners;
 using CameraEmulator.UI.Properties;
 
 namespace CameraEmulator.UI.Services.Configuration
 {
     public class ConfigurationService : IConfigurationService
     {
-        public bool SaveConfiguration(Scanner caseScanner, Scanner sleeveScanner, Scanner itemScanner)
+        public bool SaveConfiguration()
         {
             try
             {

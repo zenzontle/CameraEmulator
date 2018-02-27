@@ -11,7 +11,7 @@ namespace CameraEmulator.UI.Views
         {
             InitializeComponent();
 
-            ribbon.AddAboutButton();
+            Ribbon.AddAboutButton();
         }
     }
 }

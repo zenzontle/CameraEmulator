@@ -10,7 +10,7 @@
                    d:DataContext="{d:DesignInstance viewModels:RibbonViewModel}"
                    mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="300">
 
-    <fluent:Ribbon x:Name="ribbon" IsQuickAccessToolBarVisible="False" CanCustomizeRibbon="False" AutomaticStateManagement="False">
+    <fluent:Ribbon x:Name="Ribbon" IsQuickAccessToolBarVisible="False" CanCustomizeRibbon="False" AutomaticStateManagement="False">
         <fluent:Ribbon.Menu>
             <fluent:Backstage Header="File">
                 <fluent:BackstageTabControl/>
@@ -20,7 +20,8 @@
             <fluent:RibbonTabItem Header="Actions">
                 <fluent:RibbonGroupBox Header="Camera">
                     <fluent:Button Header="Configure Cameras" SizeDefinition="Large" Size="Large" Command="{Binding ConfigureCameras}"></fluent:Button>
-                    <fluent:Button Header="Send Codes" SizeDefinition="Large" Size="Large" Command="{Binding SendCodes}"></fluent:Button>
+                    <fluent:Button Header="Send Codes Manually" SizeDefinition="Large" Size="Large" Command="{Binding SendCodesManually}"></fluent:Button>
+                    <fluent:Button Header="Send Codes From File" SizeDefinition="Large" Size="Large" Command="{Binding SendCodesFromFile}"></fluent:Button>
                 </fluent:RibbonGroupBox>
             </fluent:RibbonTabItem>
         </fluent:Ribbon.Tabs>

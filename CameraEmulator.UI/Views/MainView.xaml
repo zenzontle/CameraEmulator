@@ -9,7 +9,7 @@
                    
                    d:DesignHeight="800" d:DesignWidth="600" mc:Ignorable="d">
     <Grid>
-        <orc:TabControl x:Name="TDIControl" Margin="-1" LoadTabItems="LazyLoading">
+        <orc:TabControl x:Name="TdiControl" Margin="-1" LoadTabItems="LazyLoading">
             <TabControl.ItemTemplate>
                 <DataTemplate>
                     <controls:ClosableTabItemView Title="{Binding ViewModel.Title}" CanClose="{Binding CanClose}"></controls:ClosableTabItemView>

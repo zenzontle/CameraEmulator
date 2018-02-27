@@ -11,7 +11,7 @@ namespace CameraEmulator.UI.Extensions
     public static class TabServiceExtensions
     {
         public static TabItem Add<TViewModel>(this ITabService tabService, object dataContext = null, bool canClose = false, object tag = null)
-            where TViewModel : ITaskCommandViewModel, IViewModel
+            where TViewModel : IViewModel
         {
             var tabItem = CreateTabItem<TViewModel>(tabService, dataContext);
             tabItem.CanClose = canClose;
@@ -30,7 +30,7 @@ namespace CameraEmulator.UI.Extensions
         }
 
         public static async Task<TabItem> AddAndActivateAsync<TViewModel>(this ITabService tabService, object dataContext = null, bool canClose = false, object tag = null)
-            where TViewModel : ITaskCommandViewModel, IViewModel
+            where TViewModel : IViewModel
         {
             await Task.Run(() =>
             {
@@ -43,7 +43,7 @@ namespace CameraEmulator.UI.Extensions
             return null;
         }
 
-        public static TabItem CreateTabItem<TViewModel>(this ITabService tabService, object dataContext) where TViewModel : ITaskCommandViewModel, IViewModel
+        public static TabItem CreateTabItem<TViewModel>(this ITabService tabService, object dataContext) where TViewModel : IViewModel
         {
             TViewModel vm;
             if (dataContext != null)

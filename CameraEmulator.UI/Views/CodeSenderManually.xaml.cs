@@ -1,11 +1,11 @@
 ﻿namespace CameraEmulator.UI.Views
 {
     /// <summary>
-    /// Interaction logic for CodeSenders.xaml
+    /// Interaction logic for CodeSenderManually.xaml
     /// </summary>
-    public partial class CodeSenders
+    public partial class CodeSenderManually
     {
-        public CodeSenders()
+        public CodeSenderManually()
         {
             InitializeComponent();
         }

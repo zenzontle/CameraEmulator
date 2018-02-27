@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using CameraEmulator.UI.Models;
 
 namespace CameraEmulator.UI.Services.Interfaces
 {

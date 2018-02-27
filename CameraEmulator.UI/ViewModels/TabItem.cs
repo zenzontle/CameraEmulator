@@ -8,7 +8,7 @@ namespace CameraEmulator.UI.ViewModels
 {
     public class TabItem : ITabItem
     {
-        public TabItem(ITaskCommandViewModel viewModel)
+        public TabItem(IViewModel viewModel)
         {
             ViewModel = viewModel;
             CanClose = true;
@@ -19,7 +19,7 @@ namespace CameraEmulator.UI.ViewModels
             }
         }
 
-        public ITaskCommandViewModel ViewModel { get; private set; }
+        public IViewModel ViewModel { get; }
         public event EventHandler<EventArgs> Closed;
 
         public bool CanClose { get; set; }

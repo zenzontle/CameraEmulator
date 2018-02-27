@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using CameraEmulator.UI.Services;
-using CameraEmulator.UI.ViewModels;
 using Catel;
 using Catel.MVVM;
 
@@ -9,7 +8,7 @@ namespace CameraEmulator.UI.Models
 {
     public class TabItem : ITabItem
     {
-        public TabItem(ITaskCommandViewModel viewModel)
+        public TabItem(IViewModel viewModel)
         {
             ViewModel = viewModel;
             CanClose = true;
@@ -20,7 +19,7 @@ namespace CameraEmulator.UI.Models
             }
         }
 
-        public ITaskCommandViewModel ViewModel { get; private set; }
+        public IViewModel ViewModel { get; private set; }
 
         public bool CanClose { get; set; }
         public object Tag { get; set; }

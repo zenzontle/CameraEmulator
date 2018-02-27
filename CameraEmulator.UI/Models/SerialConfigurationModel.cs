@@ -12,5 +12,6 @@
         public ScannerModel CaseScanner { get; set; }
         public ScannerModel SleeveScanner { get; set; }
         public ScannerModel ItemScanner { get; set; }
+        public int CodeSendDelay { get; set; }
     }
 }

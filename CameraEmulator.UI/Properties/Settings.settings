@@ -11,5 +11,8 @@
     <Setting Name="Item" Type="CameraEmulator.Core.Scanners.Scanner" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="CodeSendDelay" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">200</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

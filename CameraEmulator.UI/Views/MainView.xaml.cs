@@ -13,7 +13,7 @@ namespace CameraEmulator.UI.Views
             InitializeComponent();
 
             var tabService = this.GetServiceLocator().ResolveType<ITabService>();
-            tabService?.SetTabControl(TDIControl);
+            tabService?.SetTabControl(TdiControl);
         }
     }
 }

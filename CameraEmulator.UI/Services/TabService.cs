@@ -161,7 +161,10 @@ namespace CameraEmulator.UI.Services
             if (handler != null)
             {
                 var selectedTab = SelectedTab;
-                handler(this, new TabItemEventArgs(selectedTab));
+                if (selectedTab != null)
+                {
+                    handler(this, new TabItemEventArgs(selectedTab));
+                }
             }
         }
     }

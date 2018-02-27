@@ -12,7 +12,7 @@ using Catel.MVVM;
 
 namespace CameraEmulator.UI.ViewModels
 {
-    public class SerialConfigurationViewModel : ViewModelBase, ITaskCommandViewModel
+    public class SerialConfigurationViewModel : ViewModelBase
     {
         private IConfigurationService _configurationService;
         public SerialConfigurationViewModel(IConfigurationService configurationService)
@@ -54,43 +54,15 @@ namespace CameraEmulator.UI.ViewModels
         public override string Title { get; protected set; } = "Serial Configuration";
 
         [Model]
-        public SerialConfigurationModel Model { get; private set; }
+        public SerialConfigurationModel Model { get; }
 
         public TaskCommand SaveConfiguration { get; }
-        private async Task OnSaveConfigurationTask()
+        private Task OnSaveConfigurationTask()
         {
             try
             {
-                Scanner caseScanner = new Scanner
-                {
-                    ScannerType = SerialType.Case,
-                    BaudRate = Model.CaseScanner.BaudRate,
-                    DataBits = Model.CaseScanner.DataBits,
-                    Parity = Model.CaseScanner.Parity,
-                    PortName = Model.CaseScanner.PortName,
-                    StopBits = Model.CaseScanner.StopBits
-                };
-
-                Scanner sleeveScanner = new Scanner
-                {
-                    ScannerType = SerialType.Sleeve,
-                    BaudRate = Model.SleeveScanner.BaudRate,
-                    DataBits = Model.SleeveScanner.DataBits,
-                    Parity = Model.SleeveScanner.Parity,
-                    PortName = Model.SleeveScanner.PortName,
-                    StopBits = Model.SleeveScanner.StopBits
-                };
-                Scanner itemScanner = new Scanner
-                {
-                    ScannerType = SerialType.Item,
-                    BaudRate = Model.ItemScanner.BaudRate,
-                    DataBits = Model.ItemScanner.DataBits,
-                    Parity = Model.ItemScanner.Parity,
-                    PortName = Model.ItemScanner.PortName,
-                    StopBits = Model.ItemScanner.StopBits
-                };
-
-                _configurationService.SaveConfiguration(caseScanner, sleeveScanner, itemScanner);
+                _configurationService.SaveConfiguration();
+                return Task.FromResult(0);
             }
             catch (Exception e)
             {
@@ -100,23 +72,10 @@ namespace CameraEmulator.UI.ViewModels
         }
 
         public TaskCommand CancelConfiguration { get; }
-        private async Task OnCancelConfigurationTask()
+        private Task OnCancelConfigurationTask()
         {
             //_controller.SendCaseCode(Model.CaseCode);
-        }
-
-        public TaskCommand SaveChanges { get; }
-        public TaskCommand ApplyChanges { get; }
-        public TaskCommand CancelChanges { get; }
-
-        protected override void OnPropertyChanged(AdvancedPropertyChangedEventArgs e)
-        {
-            base.OnPropertyChanged(e);
-        }
-
-        public void UpdateModel(SerialConfigurationModel serialConfiguration)
-        {
-            Model = serialConfiguration;
+            return Task.FromResult(0);
         }
     }
 }

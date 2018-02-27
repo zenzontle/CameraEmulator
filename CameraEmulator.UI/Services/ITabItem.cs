@@ -1,5 +1,5 @@
 ﻿using System;
-using CameraEmulator.UI.ViewModels;
+using Catel.MVVM;
 
 namespace CameraEmulator.UI.Services
 {
@@ -7,7 +7,7 @@ namespace CameraEmulator.UI.Services
     {
         bool CanClose { get; set; }
         object Tag { get; set; }
-        ITaskCommandViewModel ViewModel { get; }
+        IViewModel ViewModel { get; }
         event EventHandler<EventArgs> Closed;
     }
 }

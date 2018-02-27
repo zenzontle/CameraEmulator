@@ -15,7 +15,11 @@ namespace CameraEmulator.Core
 
         public SerialConnector(string portName, int baudRate, Parity parity, int dataBits, StopBits stopBits)
         {
-            _port = new SerialPort(portName, baudRate, parity, dataBits, stopBits);
+            _port = new SerialPort(portName, baudRate, parity, dataBits, stopBits)
+            {
+                WriteTimeout = 3000
+            };
+
             _port.DataReceived += port_DataReceived;
         }
 
@@ -31,6 +35,11 @@ namespace CameraEmulator.Core
                 _port.Open();
             }
             _port.Write(data);
+        }
+
+        public void Disconnect()
+        {
+            _port.Close();
         }
         private void port_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {

@@ -55,5 +55,17 @@ namespace CameraEmulator.UI.Properties {
                 this["Item"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        public int CodeSendDelay {
+            get {
+                return ((int)(this["CodeSendDelay"]));
+            }
+            set {
+                this["CodeSendDelay"] = value;
+            }
+        }
     }
 }
