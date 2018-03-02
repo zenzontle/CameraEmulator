@@ -1,6 +1,4 @@
-﻿using System.Windows.Input;
-
-namespace CameraEmulator.UI.Views
+﻿namespace CameraEmulator.UI.Views
 {
     /// <summary>
     /// Interaction logic for CodeSenderFromFile.xaml

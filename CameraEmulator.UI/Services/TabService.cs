@@ -4,7 +4,6 @@ using System.Linq;
 using System.Windows.Controls;
 using CameraEmulator.UI.Extensions;
 using CameraEmulator.UI.Services.Interfaces;
-using Catel.Logging;
 
 namespace CameraEmulator.UI.Services
 {
@@ -90,17 +89,7 @@ namespace CameraEmulator.UI.Services
 
         public void Activate(ITabItem tabItem)
         {
-            if (_tabControl == null)
-            {
-                return;
-            }
-
-            //var isVisible = IsVisible(tabItem);
-            //if (!isVisible)
-            //{
-            //    throw Log.ErrorAndCreateException<InvalidOperationException>("Tab item is not visible, use the Show() method first");
-            //}
-            _tabControl.Dispatcher.BeginInvoke(new Action(() => _tabControl.SelectedItem = tabItem));
+            _tabControl?.Dispatcher.BeginInvoke(new Action(() => _tabControl.SelectedItem = tabItem));
         }
 
         public void Remove(ITabItem tabItem)
@@ -117,27 +106,23 @@ namespace CameraEmulator.UI.Services
 
         public void Clear()
         {
-            if (_tabControl == null)
-            {
-                return;
-            }
-            _tabControl.Dispatcher.BeginInvoke(new Action(() => _tabControl.Items.Clear()));
+            _tabControl?.Dispatcher.BeginInvoke(new Action(() => _tabControl.Items.Clear()));
         }
 
         public void SetTabControl(object tabControl)
         {
-            if (tabControl is TabControl)
+            var control = tabControl as TabControl;
+            if (control != null)
             {
                 if (_tabControl != null)
                 {
                     _tabControl.SelectionChanged -= OnTabControlSelectionChanged;
                 }
 
-                _tabControl = (TabControl) tabControl;
+                _tabControl = control;
                 _tabControl.SelectionChanged += OnTabControlSelectionChanged;
             }
         }
-
 
         private void OnTabItemClosed(object sender, EventArgs e)
         {

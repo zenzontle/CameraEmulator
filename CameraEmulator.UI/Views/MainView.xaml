@@ -12,13 +12,15 @@
         <orc:TabControl x:Name="TdiControl" Margin="-1" LoadTabItems="LazyLoading">
             <TabControl.ItemTemplate>
                 <DataTemplate>
-                    <controls:ClosableTabItemView Title="{Binding ViewModel.Title}" CanClose="{Binding CanClose}"></controls:ClosableTabItemView>
+                    <controls:ClosableTabItemView Title="{Binding ViewModel.Title}" CanClose="{Binding CanClose}"
+                                                  d:DataContext="{d:DesignData}"></controls:ClosableTabItemView>
                 </DataTemplate>
             </TabControl.ItemTemplate>
 
             <TabControl.ContentTemplate>
                 <DataTemplate>
-                    <ContentControl Content="{Binding ViewModel, Converter={catel:ViewModelToViewConverter}}"></ContentControl>
+                    <ContentControl Content="{Binding ViewModel, Converter={catel:ViewModelToViewConverter}}"
+                                    d:DataContext="{d:DesignData}"></ContentControl>
                 </DataTemplate>
             </TabControl.ContentTemplate>
         </orc:TabControl>

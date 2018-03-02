@@ -10,7 +10,7 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <StackPanel Orientation="Horizontal">
         <TextBlock Text="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:ClosableTabItemView}}, Path=Title}"></TextBlock>
-        <Button Click="OnCloseButtonClick" Margin="5, 0, 0, 0" HorizontalAlignment="Right" VerticalAlignment="Center" x:Name="PART_CLOSE" Height="14" Width="14" Cursor="Hand" Foreground="#FF919191" ToolTip="{catel:LanguageBinding Close}" Style="{DynamicResource WindowButtonStyle}" IsCancel="True" Visibility="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:ClosableTabItemView}}, Path=CanClose, Converter={catel:BooleanToCollapsingVisibilityConverter}}">
+        <Button Click="OnCloseButtonClick" Margin="5, 0, 0, 0" HorizontalAlignment="Right" VerticalAlignment="Center" x:Name="TabClose" Height="14" Width="14" Cursor="Hand" Foreground="#FF919191" ToolTip="{catel:LanguageBinding Close}" IsCancel="True" Visibility="{Binding RelativeSource={RelativeSource AncestorType={x:Type local:ClosableTabItemView}}, Path=CanClose, Converter={catel:BooleanToCollapsingVisibilityConverter}}">
             <Button.Template>
                 <ControlTemplate>
                     <Grid Background="{TemplateBinding Background}">

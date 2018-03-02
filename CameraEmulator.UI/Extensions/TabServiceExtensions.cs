@@ -54,7 +54,7 @@ namespace CameraEmulator.UI.Extensions
             {
                 var dependencyResolver = tabService.GetDependencyResolver();
                 var viewModelFactory = dependencyResolver.Resolve<IViewModelFactory>();
-                vm = viewModelFactory.CreateViewModel<TViewModel>(dataContext);
+                vm = viewModelFactory.CreateViewModel<TViewModel>(null);
             }
 
             return new TabItem(vm);

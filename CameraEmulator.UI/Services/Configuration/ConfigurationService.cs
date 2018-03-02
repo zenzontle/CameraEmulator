@@ -14,7 +14,6 @@ namespace CameraEmulator.UI.Services.Configuration
             }
             catch (Exception)
             {
-                Console.WriteLine("Error storing user settings");
                 return false;
             }
         }

@@ -2,14 +2,8 @@
 
 namespace CameraEmulator.UI.ViewModels
 {
-    public class DashboardViewModel : ViewModelBase, ITaskCommandViewModel
+    public class DashboardViewModel : ViewModelBase
     {
-        public DashboardViewModel()
-        {
-            Title = "Dashboard";
-        }
-        public TaskCommand SaveChanges { get; }
-        public TaskCommand ApplyChanges { get; }
-        public TaskCommand CancelChanges { get; }
+        public override string Title { get; protected set; } = "Dashboard";
     }
 }

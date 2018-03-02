@@ -2,8 +2,6 @@
 using CameraEmulator.UI.Extensions;
 using CameraEmulator.UI.Services;
 using CameraEmulator.UI.Services.Interfaces;
-using CameraEmulator.UI.Views;
-using Catel.Data;
 using Catel.MVVM;
 
 namespace CameraEmulator.UI.ViewModels

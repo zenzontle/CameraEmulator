@@ -19,7 +19,7 @@ namespace CameraEmulator.UI.Models
             }
         }
 
-        public IViewModel ViewModel { get; private set; }
+        public IViewModel ViewModel { get; }
 
         public bool CanClose { get; set; }
         public object Tag { get; set; }

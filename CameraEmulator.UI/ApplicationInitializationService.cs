@@ -1,9 +1,5 @@
 ﻿using System.Threading.Tasks;
-using CameraEmulator.UI.ViewModels;
-using CameraEmulator.UI.Views;
-using Catel.IoC;
 using Catel.Logging;
-using Catel.MVVM;
 using Catel.Windows.Controls;
 using Orchestra.Services;
 
@@ -18,14 +14,10 @@ namespace CameraEmulator.UI
             await InitializeCommands();
             
             await ImprovePerformance();
-
-            var viewLocator = ServiceLocator.Default.ResolveType<IViewModelLocator>();
-            //viewLocator.Register<RibbonView, RibbonViewModel>();
         }
 
         private Task InitializeCommands()
         {
-            //TODO Register commands
             return Task.FromResult(0);
         }
         

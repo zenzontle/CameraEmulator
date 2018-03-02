@@ -10,7 +10,7 @@ namespace CameraEmulator.UI.Views
     /// <summary>
     /// Interaction logic for ClosableTabItemView.xaml
     /// </summary>
-    public partial class ClosableTabItemView : UserControl
+    public partial class ClosableTabItemView
     {
         public ClosableTabItemView()
         {

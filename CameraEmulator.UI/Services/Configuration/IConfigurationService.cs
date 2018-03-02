@@ -1,6 +1,4 @@
-﻿using CameraEmulator.Core.Scanners;
-
-namespace CameraEmulator.UI.Services.Configuration
+﻿namespace CameraEmulator.UI.Services.Configuration
 {
     public interface IConfigurationService
     {

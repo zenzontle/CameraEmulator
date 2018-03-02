@@ -4,10 +4,8 @@ using System.IO.Ports;
 using System.Linq;
 using System.Threading.Tasks;
 using CameraEmulator.Core;
-using CameraEmulator.Core.Scanners;
 using CameraEmulator.UI.Models;
 using CameraEmulator.UI.Services.Configuration;
-using Catel.Data;
 using Catel.MVVM;
 
 namespace CameraEmulator.UI.ViewModels
@@ -74,7 +72,6 @@ namespace CameraEmulator.UI.ViewModels
         public TaskCommand CancelConfiguration { get; }
         private Task OnCancelConfigurationTask()
         {
-            //_controller.SendCaseCode(Model.CaseCode);
             return Task.FromResult(0);
         }
     }
